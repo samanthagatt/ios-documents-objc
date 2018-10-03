@@ -111,6 +111,11 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="bodyTextView" destination="gXJ-eI-yH7" id="8ql-3a-knq"/>
+                        <outlet property="titleTextField" destination="qPz-WT-0oT" id="Hsm-1e-Xsp"/>
+                        <outlet property="wordCountLabel" destination="O4W-E0-Oc2" id="Agu-1B-9rm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V9j-fa-YLE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -134,6 +139,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="6H3-XF-aFm"/>
+        <segue reference="zTW-bh-OAH"/>
     </inferredMetricsTieBreakers>
 </document>

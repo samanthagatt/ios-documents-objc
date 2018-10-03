@@ -8,9 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+@class SMFDocument;
+@class SMFDocumentController;
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface SMFDocumentDetailViewController : UIViewController
+
+@property SMFDocumentController *documentController;
+@property (nonatomic) SMFDocument *document;
 
 @end
 

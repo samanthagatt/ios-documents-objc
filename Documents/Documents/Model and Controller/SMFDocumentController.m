@@ -16,11 +16,6 @@
 #pragma mark - Properties
 @property (readwrite) NSMutableArray *documents;
 
-#pragma mark - Methods
-- (void)createWithTitle:(NSString *)title body:(NSString *)body;
-- (void)updateDocument:(SMFDocument *)document title:(NSString *)title body:(NSString *)body;
-- (void)deleteDocument:(SMFDocument *)document;
-
 @end
 
 
