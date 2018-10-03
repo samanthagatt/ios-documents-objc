@@ -9,6 +9,7 @@
 #import "SMFDocumentDetailViewController.h"
 #import "SMFDocument.h"
 #import "SMFDocumentController.h"
+#import "NSString+SMFWordCount.h"
 
 
 #pragma mark Extension
@@ -28,7 +29,14 @@
 #pragma mark - Implementation
 @implementation SMFDocumentDetailViewController
 
-#pragma mark - Document Setter
+#pragma mark - ViewDidLoad
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    self.bodyTextView.delegate = self;
+}
+
+#pragma mark - Document Property Setter
 - (void)setDocument:(SMFDocument *)document {
     _document = document;
     [self loadViewIfNeeded];
@@ -48,6 +56,12 @@
         [self.documentController createWithTitle:title body:body];
     }
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+#pragma mark - UITextView Delegate
+- (void)textViewDidChange:(UITextView *)textView {
+    int wordCount = self.bodyTextView.text.wordCount;
+    self.wordCountLabel.text = [[NSString alloc] initWithFormat:@"%i Words", wordCount];
 }
 
 @end

@@ -13,7 +13,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface SMFDocumentDetailViewController : UIViewController
+@interface SMFDocumentDetailViewController : UIViewController <UITextViewDelegate>
 
 @property SMFDocumentController *documentController;
 @property (nonatomic) SMFDocument *document;
