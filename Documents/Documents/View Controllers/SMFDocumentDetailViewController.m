@@ -47,6 +47,7 @@
     } else {
         [self.documentController createWithTitle:title body:body];
     }
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 @end

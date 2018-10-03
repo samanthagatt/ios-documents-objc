@@ -38,6 +38,13 @@
     return self;
 }
 
+#pragma mark - ViewDidAppear
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    [self.tableView reloadData];
+}
+
 #pragma mark - Table view data source
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.documentController.documents.count;
@@ -47,7 +54,7 @@
 
     SMFDocument *document = [self.documentController.documents objectAtIndex:indexPath.row];
     cell.textLabel.text = document.title;
-    cell.detailTextLabel.text = document.body;
+    cell.detailTextLabel.text = [[NSString alloc] initWithFormat:@"%i", document.wordCount];
     
     return cell;
 }
