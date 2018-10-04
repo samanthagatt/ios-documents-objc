@@ -9,19 +9,13 @@
 #import <CoreData/CoreData.h>
 #import "SMFCoreDataStack.h"
 
-@interface SMFCoreDataStack ()
-
-@property NSPersistentContainer *container;
-
-@end
-
 @implementation SMFCoreDataStack
 
 - (instancetype)init
 {
     self = [super init];
     if (self) {
-        _container = [[NSPersistentContainer alloc] initWithName:@"DataModel"];
+        _container = [[NSPersistentContainer alloc] initWithName:@"SMFDocuments"];
         [_container loadPersistentStoresWithCompletionHandler:^(NSPersistentStoreDescription *d, NSError *error) {
             if (error != nil) {
                 [NSException raise:@"UnloadedPersistentStore" format:@"Failed to load persistent stores: %@", error];

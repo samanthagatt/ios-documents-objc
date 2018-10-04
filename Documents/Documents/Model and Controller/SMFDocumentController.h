@@ -8,17 +8,18 @@
 
 #import <Foundation/Foundation.h>
 
-@class SMFDocument;
+@class SMFDocumentCD;
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface SMFDocumentController : NSObject
 
 @property (readonly) NSMutableArray *documents;
+@property (readonly) NSManagedObjectContext *moc;
 
 - (void)createWithTitle:(NSString *)title body:(NSString *)body;
-- (void)updateDocument:(SMFDocument *)document title:(NSString *)title body:(NSString *)body;
-- (void)deleteDocument:(SMFDocument *)document;
+- (void)updateDocument:(SMFDocumentCD *)document title:(NSString *)title body:(NSString *)body;
+- (void)deleteDocument:(SMFDocumentCD *)document;
 
 @end
 

@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@class SMFDocument;
+@class SMFDocumentCD;
 @class SMFDocumentController;
 
 NS_ASSUME_NONNULL_BEGIN
@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface SMFDocumentDetailViewController : UIViewController <UITextViewDelegate>
 
 @property SMFDocumentController *documentController;
-@property (nonatomic) SMFDocument *document;
+@property (nonatomic) SMFDocumentCD *document;
 
 @end
 

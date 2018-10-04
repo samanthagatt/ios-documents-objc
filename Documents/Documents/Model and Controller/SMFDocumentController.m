@@ -6,8 +6,10 @@
 //  Copyright © 2018 Samantha Gatt. All rights reserved.
 //
 
+#import <CoreData/CoreData.h>
 #import "SMFDocumentController.h"
-#import "SMFDocument.h"
+#import "SMFDocumentCD+SMFConvenience.h"
+#import "SMFCoreDataStack.h"
 
 
 #pragma mark Extension
@@ -15,6 +17,7 @@
 
 #pragma mark - Properties
 @property (readwrite) NSMutableArray *documents;
+@property (readwrite) NSManagedObjectContext *moc;
 
 @end
 
@@ -27,31 +30,38 @@
 {
     self = [super init];
     if (self) {
-        // Initializes documents as an empty array
-        _documents = [[NSMutableArray alloc]init];
+        _moc = [[[[SMFCoreDataStack alloc] init] container] viewContext];
     }
     return self;
 }
 
 
-#pragma mark - Methods
+#pragma mark - CoreData
+- (void)saveToPersistentStore {
+    NSError *error = nil;
+    if ([self.moc save:&error] == NO) {
+        NSAssert(NO, @"Error saving context: %@\n%@", [error localizedDescription], [error userInfo]);
+    }
+}
 
+#pragma mark - CRUD
 #pragma mark Create
 - (void)createWithTitle:(NSString *)title body:(NSString *)body {
-    SMFDocument *document = [[SMFDocument alloc] initWithTitle:title body:body];
-    [self.documents addObject:document];
+    __unused SMFDocumentCD *d = [[SMFDocumentCD alloc] initWithTitle:title body:body context:self.moc];
+    [self saveToPersistentStore];
 }
 
 #pragma mark Update
-- (void)updateDocument:(SMFDocument *)document title:(NSString *)title body:(NSString *)body {
-    NSUInteger index = [[self documents] indexOfObject:document];
-    [[self.documents objectAtIndex:index] setTitle:title];
-    [[self.documents objectAtIndex:index] setBody:body];
+- (void)updateDocument:(SMFDocumentCD *)document title:(NSString *)title body:(NSString *)body {
+    document.title = title;
+    document.body = body;
+    [self saveToPersistentStore];
 }
 
 #pragma mark Delete
-- (void)deleteDocument:(SMFDocument *)document {
-    [self.documents removeObject:document];
+- (void)deleteDocument:(SMFDocumentCD *)document {
+    [self.moc deleteObject:document];
+    [self saveToPersistentStore];
 }
 
 @end

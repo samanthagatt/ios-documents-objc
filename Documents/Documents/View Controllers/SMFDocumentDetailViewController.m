@@ -7,7 +7,7 @@
 //
 
 #import "SMFDocumentDetailViewController.h"
-#import "SMFDocument.h"
+#import "SMFDocumentCD+CoreDataClass.h"
 #import "SMFDocumentController.h"
 #import "NSString+SMFWordCount.h"
 
@@ -37,11 +37,11 @@
 }
 
 #pragma mark - Document Property Setter
-- (void)setDocument:(SMFDocument *)document {
+- (void)setDocument:(SMFDocumentCD *)document {
     _document = document;
     [self loadViewIfNeeded];
     self.title = self.document.title;
-    self.wordCountLabel.text = [NSString.alloc initWithFormat:@"%i Words", self.document.wordCount];
+    self.wordCountLabel.text = [NSString.alloc initWithFormat:@"%i Words", [self.document.body wordCount]];
     self.titleTextField.text = document.title;
     self.bodyTextView.text = document.body;
 }

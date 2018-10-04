@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface SMFCoreDataStack : NSObject
 
+@property NSPersistentContainer *container;
+
 @end
 
 NS_ASSUME_NONNULL_END
