@@ -15,7 +15,6 @@
 		22EA0599216546A200A61412 /* SMFDocumentsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EA0598216546A200A61412 /* SMFDocumentsTableViewController.m */; };
 		22EA059F216546ED00A61412 /* SMFDocumentDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EA059E216546ED00A61412 /* SMFDocumentDetailViewController.m */; };
 		22EA05A321654CDF00A61412 /* NSString+SMFWordCount.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EA05A221654CDF00A61412 /* NSString+SMFWordCount.m */; };
-		22EA05A72165509C00A61412 /* SMFDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EA05A62165509C00A61412 /* SMFDocument.m */; };
 		22EA05AA2165520900A61412 /* SMFDocumentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EA05A92165520900A61412 /* SMFDocumentController.m */; };
 		22EA05C321657D3000A61412 /* SMFDocuments.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 22EA05C121657D3000A61412 /* SMFDocuments.xcdatamodeld */; };
 		22EA05C621657DC600A61412 /* SMFDocumentCD+SMFConvenience.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EA05C521657DC600A61412 /* SMFDocumentCD+SMFConvenience.m */; };
@@ -37,8 +36,6 @@
 		22EA059E216546ED00A61412 /* SMFDocumentDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMFDocumentDetailViewController.m; sourceTree = "<group>"; };
 		22EA05A121654CDF00A61412 /* NSString+SMFWordCount.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+SMFWordCount.h"; sourceTree = "<group>"; };
 		22EA05A221654CDF00A61412 /* NSString+SMFWordCount.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+SMFWordCount.m"; sourceTree = "<group>"; };
-		22EA05A52165509C00A61412 /* SMFDocument.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SMFDocument.h; sourceTree = "<group>"; };
-		22EA05A62165509C00A61412 /* SMFDocument.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMFDocument.m; sourceTree = "<group>"; };
 		22EA05A82165520900A61412 /* SMFDocumentController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SMFDocumentController.h; sourceTree = "<group>"; };
 		22EA05A92165520900A61412 /* SMFDocumentController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMFDocumentController.m; sourceTree = "<group>"; };
 		22EA05C221657D3000A61412 /* SMFDocuments.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SMFDocuments.xcdatamodel; sourceTree = "<group>"; };
@@ -80,8 +77,8 @@
 			children = (
 				22EA0580216541BB00A61412 /* AppDelegate.h */,
 				22EA0581216541BB00A61412 /* AppDelegate.m */,
-				22EA05AB21656D0000A61412 /* CoreData */,
 				22EA05A021654C8B00A61412 /* Word Count NSString method */,
+				22EA05AB21656D0000A61412 /* CoreData */,
 				22EA05A42165508600A61412 /* Model and Controller */,
 				22EA05962165467A00A61412 /* View Controllers */,
 				22EA0586216541BB00A61412 /* Main.storyboard */,
@@ -116,8 +113,6 @@
 		22EA05A42165508600A61412 /* Model and Controller */ = {
 			isa = PBXGroup;
 			children = (
-				22EA05A52165509C00A61412 /* SMFDocument.h */,
-				22EA05A62165509C00A61412 /* SMFDocument.m */,
 				22EA05A82165520900A61412 /* SMFDocumentController.h */,
 				22EA05A92165520900A61412 /* SMFDocumentController.m */,
 			);
@@ -216,7 +211,6 @@
 				22EA05C92165849A00A61412 /* SMFCoreDataStack.m in Sources */,
 				22EA05AA2165520900A61412 /* SMFDocumentController.m in Sources */,
 				22EA0582216541BB00A61412 /* AppDelegate.m in Sources */,
-				22EA05A72165509C00A61412 /* SMFDocument.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

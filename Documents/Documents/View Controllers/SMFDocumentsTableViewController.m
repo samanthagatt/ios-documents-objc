@@ -138,6 +138,12 @@
     
     return cell;
 }
+-(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        SMFDocumentCD *document = [self.frc objectAtIndexPath:indexPath];
+        [self.documentController deleteDocument:document];
+    }
+}
 
 
 #pragma mark - Navigation
